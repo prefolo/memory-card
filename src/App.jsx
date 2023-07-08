@@ -6,13 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Cards from "./components/Cards";
 
 function App() {
-  const [indexes, setIndexes] = useState([63,64,152,175,239,300,310,320,330,340,350,360])
+  const [indexes, setIndexes] = useState([63,888,870,175,525,947,292,312,674,429,629,718])
   const [selectedIndexes, setSelectedIndexes] = useState([])
   const [bestScore, setBestScore] = useState(0)
   const [isGameOver, setIsGameOver] = useState(false)
 
 
-  const notifyGameOver = () => toast.error("Ops! You clicked the same image two times. Your score is "+selectedIndexes.length, {
+  const notifyGameOver = () => toast.error("Ops! You clicked the same image two times. Your score is : "+selectedIndexes.length, {
     position: "top-center",
     autoClose: 5000,
     hideProgressBar: false,
@@ -95,7 +95,7 @@ theme="light"
           <Cards indexes={indexes} clickHandler={handleSelectImg} isGameOver={isGameOver} />
   </div>     
   </div>
-  <div id="footer">Copyright © 2022 prefolo</div>
+  <div id="footer">Copyright © 2023 prefolo</div>
   </>
   )
 }
