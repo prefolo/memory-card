@@ -8,7 +8,7 @@ function App() {
   const [indexes, setIndexes] = useState([63,64,152,175,239,300,310,320,330,340,350,360])
 
   function handleRandomIndexes() {
-    const newOrderedArr= [indexes].sort( () => .5 - Math.random() );
+    const newOrderedArr= [...indexes].sort( () => .5 - Math.random() );
     setIndexes(newOrderedArr)
   }
 
