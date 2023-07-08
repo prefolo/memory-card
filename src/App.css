@@ -27,10 +27,34 @@
 	background-color: var(--footer-bg-color);
 }
 
+#instruction{
+  margin-top: 30px;
+  text-align: center;
+  color: #888;
+}
+
 #cards-container{
   display: grid;
 grid-template-columns: repeat(4, 1fr);
 grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 10px;
-grid-row-gap: 10px;
+gap: 10px;
+}
+
+.card-img, .card-img-game-over{
+  border:7px solid #fff;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.card-img-game-over {
+  border:7px solid #eee;
+  opacity:0.6;
+}
+
+.card-img:hover{
+  border:7px solid rgb(138, 185, 255);
+}
+
+.card-img:active{
+  border:7px solid rgb(217, 255, 0); 
 }

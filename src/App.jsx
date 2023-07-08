@@ -1,16 +1,44 @@
 
 import './App.css'
 import React, { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Cards from "./components/Cards";
 
 function App() {
   const [indexes, setIndexes] = useState([63,64,152,175,239,300,310,320,330,340,350,360])
   const [selectedIndexes, setSelectedIndexes] = useState([])
   const [bestScore, setBestScore] = useState(0)
+  const [isGameOver, setIsGameOver] = useState(false)
 
 
-  function handleRandomIndexes(e) {
+  const notifyGameOver = () => toast.error("Ops! You clicked the same image two times. Your score is "+selectedIndexes.length, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: null,
+    theme: "light",
+    onOpen: onToastOpenCb,
+      onClose: onToastCloseCb
+    });
+
+    function onToastOpenCb() {
+      document.body.style.backgroundColor='#eee'
+      setIsGameOver(true)
+    }
+
+    function onToastCloseCb() {
+      document.body.style.backgroundColor='white'
+      setIsGameOver(false)
+    }
+
+  function handleSelectImg(e) {
+    console.log({isGameOver})
+    if( isGameOver ) return;
+
     const newOrderedArr= [...indexes].sort( () => .5 - Math.random() );
     setIndexes(newOrderedArr);
 
@@ -31,12 +59,23 @@ function App() {
 
     setSelectedIndexes([])
 
-    alert('You clicked previously selected card. Game over.')
+    notifyGameOver();
   }
 
   return (
     <>
-
+    <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
     <div id="header">
       <p>Memory Card</p>
       <div id="scores-container">
@@ -48,9 +87,12 @@ function App() {
     </div>
       </div>
   </div>
+  <div id="instruction">
+  Get points by clicking on an image but don't click on any more than once!
+  </div>
   <div id="content">
   <div id="cards-container">
-          <Cards indexes={indexes} clickHandler={handleRandomIndexes}/>
+          <Cards indexes={indexes} clickHandler={handleSelectImg} isGameOver={isGameOver} />
   </div>     
   </div>
   <div id="footer">Copyright © 2022 prefolo</div>
