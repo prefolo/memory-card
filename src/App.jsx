@@ -36,15 +36,24 @@ function App() {
 
   return (
     <>
-    <div id="score">
+
+    <div id="header">
+      <p>Memory Card</p>
+      <div id="scores-container">
+      <div id="score">
       {'Score : '+selectedIndexes.length}
     </div>
     <div id="best-score">
       {'Best Score : '+bestScore}
     </div>
-    <div id="cards-container">
-          <Cards indexes={indexes} clickHandler={handleRandomIndexes}/>
+      </div>
   </div>
+  <div id="content">
+  <div id="cards-container">
+          <Cards indexes={indexes} clickHandler={handleRandomIndexes}/>
+  </div>     
+  </div>
+  <div id="footer">Copyright © 2022 prefolo</div>
   </>
   )
 }
