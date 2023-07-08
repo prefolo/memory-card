@@ -52,9 +52,9 @@ gap: 10px;
 }
 
 .card-img:hover{
-  border:7px solid rgb(138, 185, 255);
+  border:7px solid #3cea73;
 }
 
 .card-img:active{
-  border:7px solid rgb(217, 255, 0); 
+  border:7px solid orange; 
 }
