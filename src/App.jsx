@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Cards from "./components/Cards";
 
 function App() {
-  const [indexes, setIndexes] = useState([63,888,870,175,525,947,292,312,674,429,629,718])
+  const [indexes, setIndexes] = useState([63,888,870,175,525,979,292,312,674,429,629,718])
   const [selectedIndexes, setSelectedIndexes] = useState([])
   const [bestScore, setBestScore] = useState(0)
   const [isGameOver, setIsGameOver] = useState(false)
