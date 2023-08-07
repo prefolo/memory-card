@@ -28,7 +28,8 @@
 }
 
 #instruction{
-  margin-top: 30px;
+	margin: 40px;
+  margin-bottom: 0;
   text-align: center;
   color: #888;
 }
@@ -37,7 +38,7 @@
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fill, 170px);
-    width: 70%;
+    width: 80%;
     max-width: 720px;
     margin: 60px;
     justify-content: center;

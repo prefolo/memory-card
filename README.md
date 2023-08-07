@@ -25,5 +25,5 @@ npm run build
 To run:
 
 ```sh
-npm preview
+npm run preview
 ```
