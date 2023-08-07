@@ -34,10 +34,13 @@
 }
 
 #cards-container{
-  display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: repeat(3, 1fr);
-gap: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, 170px);
+    width: 70%;
+    max-width: 720px;
+    margin: 60px;
+    justify-content: center;
 }
 
 .card-img, .card-img-game-over{
